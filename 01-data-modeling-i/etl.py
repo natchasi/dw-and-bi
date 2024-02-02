@@ -73,7 +73,7 @@ def process(cur, conn, filepath):
                     INSERT INTO repositories (
                         id,
                         name,
-                        actor_id,
+                        actor_id
                     ) VALUES ({each["repo"]["id"]}, '{each["repo"]["name"]}', '{each["actor"]["id"]}')
                     ON CONFLICT (id) DO NOTHING
                 """
@@ -87,8 +87,8 @@ def process(cur, conn, filepath):
                         type,
                         actor_id,
                         repo_id,
-                        create_at timestamp
-                    ) VALUES ('{each["id"]}', '{each["type"]}', '{each["actor"]["id"]}', '{each["repo"]["id"]}', '{each["create"]}')
+                        create_at
+                    ) VALUES ('{each["id"]}', '{each["type"]}', '{each["actor"]["id"]}', '{each["repo"]["id"]}', '{each["created_at"]}')
                     ON CONFLICT (id) DO NOTHING
                 """
                 # print(insert_statement)
