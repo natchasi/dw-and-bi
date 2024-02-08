@@ -6,10 +6,26 @@ from typing import List
 from cassandra.cluster import Cluster
 
 
-table_drop = "DROP TABLE events"
+table_drop = "DROP TABLE IF EXISTS events CASCADE"
+table_drop = "DROP TABLE IF EXISTS actors CASCADE"
+table_drop = "DROP TABLE IF EXISTS repositories CASCADE"
 
 table_create = """
-    CREATE TABLE IF NOT EXISTS events
+    CREATE TABLE IF NOT EXISTS actors
+    (
+        id text,
+        login text,
+        display_login,
+        url text,
+        public boolean,
+        PRIMARY KEY (
+            id
+        )
+    )
+"""
+
+table_create = """
+    CREATE TABLE IF NOT EXISTS repositories
     (
         id text,
         type text,
@@ -20,6 +36,39 @@ table_create = """
         )
     )
 """
+
+table_create = """
+    CREATE TABLE IF NOT EXISTS events
+    (
+        id text,
+        type text,
+        actor_id int,
+        repo_id int,
+        create_at tinestamp,
+        public boolean,
+        PRIMARY KEY (
+            id,
+            type,
+            actor_id,
+            repo_id,
+            create_at
+        )
+    )
+"""
+
+create_table_queries = [
+    table_create,
+]
+drop_table_queries = [
+    table_drop,
+]
+
+create_table_queries = [
+    table_create,
+]
+drop_table_queries = [
+    table_drop,
+]
 
 create_table_queries = [
     table_create,
