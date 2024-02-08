@@ -1,5 +1,5 @@
 # RUN data modeling II
-1. RUN cd 02-data-modeling-ii to direct in folder
+1. RUN cd 02-data-modeling-ii to direct in a directory
 2. Open etl.py file and run python library to connect cassandra (install package) by "$ pip install cqlsh" 
 3. Run docker compose file (popstgres) with > $ docker compose up
 4. Add another teminal to run python file that connect to cassandra
