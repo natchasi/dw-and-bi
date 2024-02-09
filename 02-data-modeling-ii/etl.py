@@ -5,30 +5,18 @@ from typing import List
 
 from cassandra.cluster import Cluster
 
-
-table_drop = "DROP TABLE IF EXISTS events CASCADE"
-table_drop = "DROP TABLE IF EXISTS actors CASCADE"
-table_drop = "DROP TABLE IF EXISTS repositories CASCADE"
+table_drop = "DROP TABLE events"
 
 table_create = """
-    CREATE TABLE IF NOT EXISTS actors
-    (
-        id text,
-        login text,
-        display_login,
-        url text,
-        public boolean,
-        PRIMARY KEY (
-            id
-        )
-    )
-"""
-
-table_create = """
-    CREATE TABLE IF NOT EXISTS repositories
+    CREATE TABLE IF NOT EXISTS events
     (
         id text,
         type text,
+        actor_id text,
+        actor_login text,
+        repo_id text,
+        repo_name text,
+        created_at timestamp,
         public boolean,
         PRIMARY KEY (
             id,
@@ -36,39 +24,6 @@ table_create = """
         )
     )
 """
-
-table_create = """
-    CREATE TABLE IF NOT EXISTS events
-    (
-        id text,
-        type text,
-        actor_id int,
-        repo_id int,
-        create_at tinestamp,
-        public boolean,
-        PRIMARY KEY (
-            id,
-            type,
-            actor_id,
-            repo_id,
-            create_at
-        )
-    )
-"""
-
-create_table_queries = [
-    table_create,
-]
-drop_table_queries = [
-    table_drop,
-]
-
-create_table_queries = [
-    table_create,
-]
-drop_table_queries = [
-    table_drop,
-]
 
 create_table_queries = [
     table_create,
@@ -84,14 +39,12 @@ def drop_tables(session):
         except Exception as e:
             print(e)
 
-
 def create_tables(session):
     for query in create_table_queries:
         try:
             session.execute(query)
         except Exception as e:
             print(e)
-
 
 def get_files(filepath: str) -> List[str]:
     """
@@ -109,6 +62,14 @@ def get_files(filepath: str) -> List[str]:
 
     return all_files
 
+#def left(s, amount):
+#    return s[:amount]
+
+#def right(s, amount):
+#    return s[-amount:]
+
+#def mid(s, offset, amount):
+#    return s[offset:offset+amount]
 
 def process(session, filepath):
     # Get list of files from filepath
@@ -118,18 +79,34 @@ def process(session, filepath):
         with open(datafile, "r") as f:
             data = json.loads(f.read())
             for each in data:
+
                 # Print some sample data
-                print(each["id"], each["type"], each["actor"]["login"])
+                # created_at = each["created_at"].replace("T"," ").replace("Z","")
+                # print(each["id"], each["type"], each["actor"]["id"], each["actor"]["login"], created_at)
 
                 # Insert data into tables here
-
+                query = f"""
+                    INSERT INTO events (
+                        id,
+                        type,
+                        actor_id,
+                        actor_login,
+                        repo_id,
+                        repo_name,
+                        created_at,
+                        public) 
+                    VALUES ('{each["id"]}', '{each["type"]}', 
+                            '{each["actor"]["id"]}','{each["actor"]["login"]}',
+                            '{each["repo"]["id"]}', '{each["repo"]["name"]}', 
+                            '{each["created_at"]}',{each["public"]})
+                """
+                session.execute(query)
 
 def insert_sample_data(session):
     query = f"""
     INSERT INTO events (id, type, public) VALUES ('23487929637', 'IssueCommentEvent', true)
     """
     session.execute(query)
-
 
 def main():
     cluster = Cluster(['127.0.0.1'])
@@ -156,12 +133,19 @@ def main():
     create_tables(session)
 
     # process(session, filepath="../data")
-    insert_sample_data(session)
+    # insert_sample_data(session)
 
     # Select data in Cassandra and print them to stdout
+    # query = """
+    # SELECT * from events WHERE id = '23487929637' AND type = 'IssueCommentEvent'
+    # """
+
+    process(session, filepath="../data")
+
     query = """
-    SELECT * from events WHERE id = '23487929637' AND type = 'IssueCommentEvent'
+    SELECT * from events
     """
+
     try:
         rows = session.execute(query)
     except Exception as e:
@@ -169,7 +153,6 @@ def main():
 
     for row in rows:
         print(row)
-
 
 if __name__ == "__main__":
     main()
