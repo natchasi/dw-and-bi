@@ -10,7 +10,7 @@
     1.7) created_at
     1.8) public
 โดยแต่ละ column มีความสัมพันธ์กัน ดังนี้ 
-id และ type เป็น Primary key 
+id และ type เป็น Partition key 
 create_at เป็น Clustering key
  
 

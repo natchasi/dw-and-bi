@@ -132,14 +132,6 @@ def main():
     drop_tables(session)
     create_tables(session)
 
-    # process(session, filepath="../data")
-    # insert_sample_data(session)
-
-    # Select data in Cassandra and print them to stdout
-    # query = """
-    # SELECT * from events WHERE id = '23487929637' AND type = 'IssueCommentEvent'
-    # """
-
     process(session, filepath="../data")
 
     query = """
