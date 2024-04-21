@@ -1,0 +1,39 @@
+[2024-04-21T13:53:06.191+0000] {processor.py:161} INFO - Started process (PID=39) to work on /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:53:06.194+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/forecast_api_pipeline.py for tasks to queue
+[2024-04-21T13:53:06.198+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:06.198+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:53:06.269+0000] {processor.py:840} INFO - DAG(s) 'forecast_api_pipeline' retrieved from /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:53:07.332+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:07.331+0000] {override.py:1829} INFO - Created Permission View: can edit on DAG:forecast_api_pipeline
+[2024-04-21T13:53:07.378+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:07.377+0000] {override.py:1829} INFO - Created Permission View: can read on DAG:forecast_api_pipeline
+[2024-04-21T13:53:07.413+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:07.410+0000] {override.py:1829} INFO - Created Permission View: can delete on DAG:forecast_api_pipeline
+[2024-04-21T13:53:07.416+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:07.415+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-21T13:53:07.464+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:07.463+0000] {dag.py:3118} INFO - Creating ORM DAG for forecast_api_pipeline
+[2024-04-21T13:53:07.507+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:07.507+0000] {dag.py:3954} INFO - Setting next_dagrun for forecast_api_pipeline to 2024-04-14 00:00:00+00:00, run_after=2024-04-15 00:00:00+00:00
+[2024-04-21T13:53:07.555+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/forecast_api_pipeline.py took 1.394 seconds
+[2024-04-21T13:53:38.137+0000] {processor.py:161} INFO - Started process (PID=101) to work on /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:53:38.171+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/forecast_api_pipeline.py for tasks to queue
+[2024-04-21T13:53:38.184+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:38.184+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:53:38.222+0000] {processor.py:840} INFO - DAG(s) 'forecast_api_pipeline' retrieved from /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:53:38.344+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:38.343+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-21T13:53:38.506+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:38.505+0000] {dag.py:3954} INFO - Setting next_dagrun for forecast_api_pipeline to 2024-04-14 00:00:00+00:00, run_after=2024-04-15 00:00:00+00:00
+[2024-04-21T13:53:38.586+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/forecast_api_pipeline.py took 0.460 seconds
+[2024-04-21T13:54:09.200+0000] {processor.py:161} INFO - Started process (PID=160) to work on /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:54:09.204+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/forecast_api_pipeline.py for tasks to queue
+[2024-04-21T13:54:09.206+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:09.206+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:54:09.229+0000] {processor.py:840} INFO - DAG(s) 'forecast_api_pipeline' retrieved from /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:54:09.267+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:09.266+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-21T13:54:09.300+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:09.300+0000] {dag.py:3954} INFO - Setting next_dagrun for forecast_api_pipeline to 2024-04-14 00:00:00+00:00, run_after=2024-04-15 00:00:00+00:00
+[2024-04-21T13:54:09.331+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/forecast_api_pipeline.py took 0.141 seconds
+[2024-04-21T13:54:40.218+0000] {processor.py:161} INFO - Started process (PID=221) to work on /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:54:40.220+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/forecast_api_pipeline.py for tasks to queue
+[2024-04-21T13:54:40.222+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:40.222+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:54:40.232+0000] {processor.py:840} INFO - DAG(s) 'forecast_api_pipeline' retrieved from /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:54:40.258+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:40.257+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-21T13:54:40.292+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:40.291+0000] {dag.py:3954} INFO - Setting next_dagrun for forecast_api_pipeline to 2024-04-14 00:00:00+00:00, run_after=2024-04-15 00:00:00+00:00
+[2024-04-21T13:54:40.317+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/forecast_api_pipeline.py took 0.105 seconds
+[2024-04-21T13:55:10.399+0000] {processor.py:161} INFO - Started process (PID=283) to work on /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:55:10.408+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/forecast_api_pipeline.py for tasks to queue
+[2024-04-21T13:55:10.416+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:55:10.416+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:55:10.460+0000] {processor.py:840} INFO - DAG(s) 'forecast_api_pipeline' retrieved from /opt/airflow/dags/forecast_api_pipeline.py
+[2024-04-21T13:55:10.555+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:55:10.546+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-21T13:55:10.653+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:55:10.653+0000] {dag.py:3954} INFO - Setting next_dagrun for forecast_api_pipeline to 2024-04-14 00:00:00+00:00, run_after=2024-04-15 00:00:00+00:00
+[2024-04-21T13:55:10.724+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/forecast_api_pipeline.py took 0.335 seconds

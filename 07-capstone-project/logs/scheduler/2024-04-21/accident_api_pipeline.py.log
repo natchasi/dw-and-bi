@@ -1,0 +1,39 @@
+[2024-04-21T13:53:04.032+0000] {processor.py:161} INFO - Started process (PID=37) to work on /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:53:04.033+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/accident_api_pipeline.py for tasks to queue
+[2024-04-21T13:53:04.041+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:04.040+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:53:04.196+0000] {processor.py:840} INFO - DAG(s) 'accident_api_pipeline' retrieved from /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:53:05.787+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:05.786+0000] {override.py:1829} INFO - Created Permission View: can edit on DAG:accident_api_pipeline
+[2024-04-21T13:53:05.817+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:05.817+0000] {override.py:1829} INFO - Created Permission View: can read on DAG:accident_api_pipeline
+[2024-04-21T13:53:05.837+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:05.836+0000] {override.py:1829} INFO - Created Permission View: can delete on DAG:accident_api_pipeline
+[2024-04-21T13:53:05.837+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:05.837+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-21T13:53:05.878+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:05.878+0000] {dag.py:3118} INFO - Creating ORM DAG for accident_api_pipeline
+[2024-04-21T13:53:05.919+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:05.913+0000] {dag.py:3954} INFO - Setting next_dagrun for accident_api_pipeline to 2025-01-01 00:00:00+00:00, run_after=2026-01-01 00:00:00+00:00
+[2024-04-21T13:53:06.002+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/accident_api_pipeline.py took 2.005 seconds
+[2024-04-21T13:53:36.676+0000] {processor.py:161} INFO - Started process (PID=99) to work on /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:53:36.683+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/accident_api_pipeline.py for tasks to queue
+[2024-04-21T13:53:36.690+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:36.687+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:53:36.721+0000] {processor.py:840} INFO - DAG(s) 'accident_api_pipeline' retrieved from /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:53:36.791+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:36.789+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-21T13:53:36.874+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:53:36.873+0000] {dag.py:3954} INFO - Setting next_dagrun for accident_api_pipeline to 2025-01-01 00:00:00+00:00, run_after=2026-01-01 00:00:00+00:00
+[2024-04-21T13:53:36.946+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/accident_api_pipeline.py took 0.284 seconds
+[2024-04-21T13:54:07.055+0000] {processor.py:161} INFO - Started process (PID=158) to work on /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:54:07.055+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/accident_api_pipeline.py for tasks to queue
+[2024-04-21T13:54:07.058+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:07.057+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:54:07.066+0000] {processor.py:840} INFO - DAG(s) 'accident_api_pipeline' retrieved from /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:54:07.084+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:07.084+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-21T13:54:07.104+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:07.104+0000] {dag.py:3954} INFO - Setting next_dagrun for accident_api_pipeline to 2025-01-01 00:00:00+00:00, run_after=2026-01-01 00:00:00+00:00
+[2024-04-21T13:54:07.124+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/accident_api_pipeline.py took 0.074 seconds
+[2024-04-21T13:54:38.084+0000] {processor.py:161} INFO - Started process (PID=219) to work on /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:54:38.085+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/accident_api_pipeline.py for tasks to queue
+[2024-04-21T13:54:38.088+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:38.088+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:54:38.104+0000] {processor.py:840} INFO - DAG(s) 'accident_api_pipeline' retrieved from /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:54:38.129+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:38.128+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-21T13:54:38.155+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:54:38.154+0000] {dag.py:3954} INFO - Setting next_dagrun for accident_api_pipeline to 2025-01-01 00:00:00+00:00, run_after=2026-01-01 00:00:00+00:00
+[2024-04-21T13:54:38.180+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/accident_api_pipeline.py took 0.105 seconds
+[2024-04-21T13:55:08.739+0000] {processor.py:161} INFO - Started process (PID=281) to work on /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:55:08.740+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/accident_api_pipeline.py for tasks to queue
+[2024-04-21T13:55:08.743+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:55:08.742+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:55:08.757+0000] {processor.py:840} INFO - DAG(s) 'accident_api_pipeline' retrieved from /opt/airflow/dags/accident_api_pipeline.py
+[2024-04-21T13:55:08.785+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:55:08.784+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-21T13:55:08.814+0000] {logging_mixin.py:188} INFO - [2024-04-21T13:55:08.814+0000] {dag.py:3954} INFO - Setting next_dagrun for accident_api_pipeline to 2025-01-01 00:00:00+00:00, run_after=2026-01-01 00:00:00+00:00
+[2024-04-21T13:55:08.866+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/accident_api_pipeline.py took 0.157 seconds
