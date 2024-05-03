@@ -9308,3 +9308,5 @@ File Path                                                                       
 /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py                                                             1           0  0.08s           2024-05-03T15:45:51
 /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/subdags/subdag.py                                                                    0           0  0.06s           2024-05-03T15:45:57
 ================================================================================
+[2024-05-03T15:46:23.073+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-05-03T15:46:23.102+0000] {manager.py:740} INFO - There are 54 files in /opt/airflow/dags
