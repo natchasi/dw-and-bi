@@ -56,7 +56,7 @@ with DAG(
         task_id="upload_to_gcs",
         src="/opt/airflow/dags/RoadAccident_2566.json",
         dst="RoadAccident_2566.json",
-        bucket="swu-ds525-8888",
+        bucket="07project_cap",
         gcp_conn_id="my_gcp_conn"
         #move_object=True
     )
