@@ -1,136 +1,23 @@
-# Instruction 
+# Running Airflow with Docker Compose
 
-> Run Docker Compose
+1. Start the Airflow environment:
 ```
 $ docker compose up
 ```
 
-> Add data to dags folder (or API)
+2. (Optional) Add data to DAGs folder:
+add data file to `dags` This folder is mounted inside the container at `/opt/airflow/dags` by Docker Compose
 
-> Open Apache Airflow web server from port 8080
+3. Access Airflow web UI:
+Open your web browser and navigate to `http://localhost:8080`. This opens the Apache Airflow web interface where you can monitor and manage your workflows.
 
-> Open elt.py 
-to config script and automate with airflow
+4. Configure DAG with `etl.py`:
+Edit the etl.py file located in your `DAGs` folder. This script defines the Python functions for your data processing tasks.
 
-> To excecute postgres on bash shell
-to access postgres and be able to query with bash
-```
-$ docker compose exec postgres bash
-```
+5. Access Postgres from container:
+`docker compose exec postgres bash`
 
-# Documentation
+# Explanation of configurations:
 
-## Configuration for Docker Compose
-
-### Mounting volumes into the container, including dags, logs, config, and plugins
-
-```
-  volumes:
-    - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
-    - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
-    - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
-    - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-```
-
-### Managing Apache Airflow's web server
-
-Mapping Apache Airflow's web server to port 8080 and setting helthcheck
-
-```
-airflow-webserver:
-    <<: *airflow-common
-    command: webserver
-    ports:
-      - "8080:8080"
-    healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
-    restart: always
-    depends_on:
-      <<: *airflow-common-depends-on
-      airflow-init:
-        condition: service_completed_successfully
-```
-
-## Configuration for etl.py file
-
-### Creating functions
-> get files
-```
-get_files = PythonOperator(
-        task_id="get_files",
-        python_callable=_get_files,
-        op_kwargs={
-            "filepath": "/opt/airflow/dags/data"
-        },
-        # op_args=["/opt/airflow/dags/data"] # for list
-    )
-```
-
-> create tables
-```
-create_tables = PythonOperator(
-        task_id="create_tables",
-        python_callable=_create_tables,
-    )
-```
-
-> process
-```
-process = PythonOperator(
-        task_id="process",
-        python_callable=_process,
-    )
-```
-
-### Creating connection with hook and applying on create tables and process function
-This process is for maintaining the credentiallity
-```
-# connect to postgres
-    hook = PostgresHook(postgres_conn_id="my_postgres_conn")
-    conn = hook.get_conn()
-    cur = conn.cursor()
-```
-
-### Creating DAG to automate workflow with Airflow
-> Creating DAG
-```
-with DAG(
-    "etl",
-    start_date=timezone.datetime(2024, 4, 2),
-    schedule="@daily",
-    tags=["swu"],
-):
-```
-> Creating operators and assigning tasks based on functions
-```
-    start = EmptyOperator(task_id="start")
-
-    get_files = PythonOperator(
-        task_id="get_files",
-        python_callable=_get_files,
-        op_kwargs={
-            "filepath": "/opt/airflow/dags/data"
-        },
-        # op_args=["/opt/airflow/dags/data"] # for list
-    )
-
-    create_tables = PythonOperator(
-        task_id="create_tables",
-        python_callable=_create_tables,
-    )
-
-    process = PythonOperator(
-        task_id="process",
-        python_callable=_process,
-    )
-
-    end = EmptyOperator(task_id="end")
-```
-> Setting workflow
-```
-start >> [get_files, create_tables] >> process >> end
-```
+Mounting volumes: The configuration snippet defines how your local directories (dags, logs, config, and plugins) are mapped to directories inside the container for persistence.
+Airflow web server: This section configures the airflow-webserver service. It specifies the command to run (webserver), maps the container port 8080 to your host machine's port 8080, defines a health check for the service, and sets restart behavior.
